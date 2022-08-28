@@ -58,11 +58,11 @@ jobs:
             at: ~/
         - run: cat ~/output.txt
 
-  workflows:
-    my_workflow:
-      jobs:
-        - save_hello_world_output
-        - print_output_file:
-            requires:
-              - save_hello_world_output
+workflows:
+  my_workflow:
+    jobs:
+      - save_hello_world_output
+      - print_output_file:
+          requires:
+            - save_hello_world_output
 
